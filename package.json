@@ -1,0 +1,25 @@
+{
+  "name": "Vbs",
+  "version": "0.1.0",
+  "description": "Desktop application build with Electron",
+  "repository": "",
+  "scripts": {
+    "postinstall": "install-app-deps"
+  },
+  "devDependencies": {
+    "electron-builder": "18.6.2",
+    "electron": "1.6.10",
+    "gulp": "^3.9.1",
+    "mocha": "^3.4.2",
+    "spectron": "^3.6.4",
+    "webpack-stream": "^3.2.0"
+  },
+  "build": {
+    "appId": "com.electron.vbs",
+    "win": {
+    },
+    "mac": {
+      "category": "your.app.category.type"
+    }
+  }
+}
