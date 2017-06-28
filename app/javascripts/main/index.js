@@ -3,6 +3,28 @@ var electron, path, json;
 path = require('path');
 json = require('../../package.json');
 
+var log = require('electron-log');
+const fs = require('fs');
+
+log.transports.file.level = 'debug';
+log.transports.file.format = '{h}:{i}:{s}:{ms} {text}';
+
+// Set approximate maximum log size in bytes. When it exceeds,
+// the archived log will be saved as the log.old.log file
+log.transports.file.maxSize = 5 * 1024 * 1024;
+
+// Write to this file, must be set before first logging
+//log.transports.file.file = __dirname + '/vbs.log';
+
+// fs.createWriteStream options, must be set before first logging
+log.transports.file.streamConfig = { flags: 'a' };
+
+// set existed file stream
+log.transports.file.stream = fs.createWriteStream('vbs.log');
+
+log.info('Hello, log');
+log.info('Hello, log2');
+
 electron = require('electron');
 
 electron.app.on('ready', function() {

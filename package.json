@@ -24,6 +24,7 @@
     }
   },
   "dependencies": {
+    "electron-log": "^2.2.6",
     "lovefield": "^2.1.12"
   }
 }
