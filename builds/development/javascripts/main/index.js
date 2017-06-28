@@ -6,6 +6,7 @@ json = require('../../package.json');
 var log = require('electron-log');
 const fs = require('fs');
 
+
 log.transports.file.level = 'debug';
 log.transports.file.format = '{h}:{i}:{s}:{ms} {text}';
 
@@ -25,7 +26,15 @@ log.transports.file.stream = fs.createWriteStream('vbs.log');
 log.info('Hello, log');
 log.info('Hello, log2');
 
+
+
+
+
+
 electron = require('electron');
+
+require('electron-debug')({showDevTools: true});
+
 
 electron.app.on('ready', function() {
   var window;
